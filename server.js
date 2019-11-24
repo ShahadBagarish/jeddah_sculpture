@@ -69,7 +69,7 @@ server.use('/show',showRoutes)
 
 //cannot find route
 server.use('*', (request, response) => {
- response.status(404).json({message : "Data not found!"})
+ response.status(404).json({message : "Data not found!  "})
 })
 
 server.listen(PORT, () => console.log(`connected to ${PORT}`))
