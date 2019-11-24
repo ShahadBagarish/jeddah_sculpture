@@ -39,7 +39,7 @@ server.get('/about' ,(req , res) =>{
   res.render('about')
 })
 
-
+// SERVER
 
 //create session for passport
 server.set('trust proxy', 1)
