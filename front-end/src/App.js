@@ -8,7 +8,7 @@ import Home from './Component/Home'
 import Activity from './Component/Activity'
 
 
-import Footer from './Component/Footer'
+import Footer from './Component/home/Footer'
 
 
 function App() {
