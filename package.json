@@ -14,6 +14,7 @@
     "admin-bro-expressjs": "^0.3.0",
     "admin-bro-mongoose": "^0.3.0",
     "bcrypt": "^3.0.7",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.16.4",
