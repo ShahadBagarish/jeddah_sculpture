@@ -3,12 +3,12 @@ const express = require('express')
 const PORT = process.env.PORT || 6200
 const server = express()
 
-
-
-
 //database connection
 require('./config/mongodb');
 require("dotenv/config");
+
+// EJS
+const ejsLayouts = require("express-ejs-layouts");
 
 
 //Authentication
@@ -26,11 +26,16 @@ const usersroutes = require('./routes/users.routes')
 const sculptureroutes = require('./routes/sculpture.routes')
 const activityRoute = require('./routes/activity');
 const showRoutes = require('./routes/show')
+const adminRoutes = require('./routes/admin')
+
+
 
 //Middlewares
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 
+server.set("view engine", "ejs");
+server.use(ejsLayouts);
 
 //create session for passport
 server.set('trust proxy', 1)
@@ -58,6 +63,13 @@ server.use('/activity', passport.authenticate('jwt', {session: false}),activityR
 
 //show routes
 server.use('/show',showRoutes)
+server.use('/admin' , adminRoutes)
+
+
+
+
+
+
 
 //cannot find route
 server.use('*', (request, response) => {

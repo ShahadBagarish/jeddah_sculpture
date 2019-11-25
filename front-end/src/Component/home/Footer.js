@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Navbar, Container, Col, Row } from 'react-bootstrap';
-import vision from "../img/vision.png"
-import '../App.css'
+import vision from "../../img/vision.png"
+import '../../App.css'
+import Home from './Home'
 
 
 export default class Footer extends Component {
@@ -16,9 +17,9 @@ export default class Footer extends Component {
                                 <div className="aboutUs">
                                     <ul>
                                         <h2>About us</h2>
-                                        <li> <a>Brif</a> </li>
-                                        <li> <a>FAQ</a> </li>
-                                        <li> <a>Help</a> </li>
+                                        <ol> <a>Brif</a> </ol>
+                                        <ol> <a>FAQ</a> </ol>
+                                        <ol> <a>Help</a> </ol>
                                     </ul>
                                 </div>
                             </Col>
@@ -28,8 +29,8 @@ export default class Footer extends Component {
                                 <div className="Contact">
                                     <ul>
                                         <h2>Contact us</h2>
-                                        <li><a>  920004315</a></li>
-                                        <li><a>info@jsh.sa</a></li>
+                                        <ol><a>  920004315</a></ol>
+                                        <ol><a>info@jsh.sa</a></ol>
                                     </ul>
                                 </div>
                             </Col>
