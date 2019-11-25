@@ -1,12 +1,19 @@
 const mongoose = require('mongoose')
 const sculptureSchema = mongoose.Schema({
+
     name: {
         type: String,
         required: true
     },
-    description: {
+    artist:{
         type: String,
         required: true
+    },
+    date:{
+        type: String,
+    },
+    description: {
+        type: String,
     },
     img: {
         type: String,
