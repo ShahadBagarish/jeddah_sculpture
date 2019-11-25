@@ -1,22 +1,42 @@
 import React, { Component } from 'react'
 import ActibityCards from './ActibityCards'
 import { Row , Container , Col , Nav , Dropdown , Button ,Form} from 'react-bootstrap'
+import axios from 'axios'
+import '../App.css'
+
+
+
+
+
+
 
 export default class Activity extends Component {
 
 
+  state={
+    data: []
+  }
 
-
+  componentDidMount() {
+    axios.get(`http://localhost:6200/show/scrupture`)
+      .then(res => {
+        const data = res.data;
+        this.setState({ data});
+      })
+  }
   render() {
 
+     
 
     return (
 
 
-      <div>
+      <div className = "father">
 
 
+ 
 
+<div className = "lefty"> 
 
 
 <div className="Dropdownpos">
@@ -52,7 +72,7 @@ export default class Activity extends Component {
   <Dropdown.Toggle  id="dropdown-basic" className="themebtn">
     Select date
   </Dropdown.Toggle>
-
+ 
   <Dropdown.Menu>
     <Dropdown.Item href="#/action-1" value="here" >Action</Dropdown.Item>
     <Dropdown.Item href="#/action-2" value="here1">Another action</Dropdown.Item>
@@ -94,28 +114,20 @@ export default class Activity extends Component {
 
 </Form>
 
-
-
-
-
-
-
 </Nav>
 
-
-
-
-
-
-
-
+</div>
 </div>
 
+<div className = "righty">
+        {this.state.data.map(s=>
+  <ActibityCards name = {s.name} description = {s.description} location = {s.location}  img = {s.img} />
+)}
 
-
-
+        </div>
 
       </div>
     )
   }
 }
+
