@@ -45,11 +45,11 @@ export default class Home extends Component {
       <body>
 
         <Nav.Item >
-        <img className="img" src={P1} />
+        {/* <img className="img" src={P1} /> */}
         </Nav.Item>
 
 </body>
-<Footer />
+
             </div>
         )
     }
