@@ -112,4 +112,78 @@ color: black;
  
   height: 100%;
   width: 100%;
+
+
+
+/* Tareq's code for styling the side nav and cards */
+
+.flex-column.theme {
+  flex-direction: column!important;
+  background-color: #14100D;
+  border-radius:20px;
+  width: 250px;
+  height:300px;
+}
+
+.Dropmenue {
+  margin-left:30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+
+.btn-primary.themebtn, .btn-primary.themebtn:hover, .btn-primary.themebtn:active, .btn-primary.themebtn:visited {
+  
+  width: 150px;
+  background-color: white!important;
+  color:black !important;
+  border-color: white !important;
+}
+
+.Dropdownpos{
+  margin:20px;
+}
+
+.optionbuttonpos{
+  margin: 20px;
+}
+
+
+.btn-primary.Searchthemebtn, .btn-primary.Searchthemebtn:hover, .btn-primary.Searchthemebtn:active, .btn-primary.Searchthemebtn:visited{
+color: black !important;
+background-color: #ffbb33 !important;
+border-color: #ffbb33 !important;
+margin-left:53px!important;
+border-radius:20px;
+width: 100px;
+
+
+
+
+}
+
+
+.flex-column.filter {
+  flex-direction: column!important;
+  background-color: rgba(69, 28, 14, 0.922);
+  margin-top: 20px;
+  border-radius:20px;
+  width: 250px;
+  height:300px;
+}
+
+.filtertext{
+  color: white;
+  margin: auto;
+}
+
+
+.filterItem{
+
+  color: white;
+  margin-left: 30px;
+
+
+
 }

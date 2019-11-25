@@ -10,6 +10,9 @@
     "dev": "concurrently \" npm test\" \"npm run frontend\""
   },
   "dependencies": {
+    "admin-bro": "^1.4.2",
+    "admin-bro-expressjs": "^0.3.0",
+    "admin-bro-mongoose": "^0.3.0",
     "bcrypt": "^3.0.7",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
