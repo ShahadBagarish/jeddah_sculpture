@@ -7,9 +7,8 @@ import { Link } from 'react-router-dom';
 import J1 from "../../img/J1.png"
 
 export default class Activity extends Component {
-  state = {
-    data: data
-  }
+
+
   render() {
     return (
       <div>
@@ -123,10 +122,9 @@ export default class Activity extends Component {
           </div>
 
           <div className="righty">
-            {this.state.data.map(s =>
-              <ActibityCards name={s.name} description={s.description} location={s.location} img={s.img} />
-            )}
-
+            <h2><strong>3 Activities Found</strong> </h2>
+      
+                  <ActibityCards /> )}
           </div>
 
         </div>

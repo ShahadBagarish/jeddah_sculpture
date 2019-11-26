@@ -15,7 +15,8 @@ import Login from './Component/home/login';
 import home from './Component/home/Home';
 import homeAuth from "./Component/home-auth/HomeAuth"
 import Activity from './Component/book-Activity/Activity'
-
+import WorkShops from './Component/book-Activity/WorkShops'
+import Tours from './Component/book-Activity/Tours'
 
 
 export default class App extends Component {
@@ -49,16 +50,17 @@ export default class App extends Component {
         <BrowserRouter>
           <Switch>
             {/*home */}
+            <Route path='/register' component={register} />
             <Route path='/home$auth' component={homeAuth} />
             <Route path='/register' component={register} />
             <Route path='/login' render={() => <Login showLogin={showLogin} Logout={Logout} username={this.state.user.username}
               change={this.changeHandler} login={this.loginHandler} />} />
             <Route path='/home' component={home} />
             {/* home nav route ---------- */}
-            <Route path='/tours' component={Activity} />
-            <Route path='/workShops'  />
-            <Route path='/scavengerhunts'  />
-            <Route path='/sharedexperiences'  />
+            <Route path='/tours' component={Tours} />
+            <Route path='/workshops' component={WorkShops} />
+            <Route path='/scavengerhunts' component={Activity} />
+            <Route path='/sharedexperiences' />
             <Route path='/joincommunity'/>
             <Route path='/' component={home} />
           </Switch>
