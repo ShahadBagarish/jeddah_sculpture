@@ -122,12 +122,12 @@ export default class Activity extends Component {
             </div>
           </div>
 
-          <div className="righty">
+          {/* <div className="righty">
             {this.state.data.map(s =>
               <ActibityCards name={s.name} description={s.description} location={s.location} img={s.img} />
             )}
 
-          </div>
+          </div> */}
 
         </div>
       </div>

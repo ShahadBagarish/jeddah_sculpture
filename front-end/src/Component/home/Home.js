@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
-import { Button, Navbar, Nav, Form, FormControl, Dropdown, ButtonToolbar, DropdownButton, Jumbotron, SplitButton, Row, Col } from 'react-bootstrap';
-import J1 from "../../img/J1.png"
+import {
+    Button, Navbar, Nav, Form, FormControl, Dropdown, ButtonToolbar,
+    DropdownButton, Jumbotron, SplitButton, Row, Col, Image
+} from 'react-bootstrap';
 import Footer from './Footer'
 import '../../App.css'
 import data from '../../data'
-import Image from './image'
+import Imagecomponent from '../home/image'
 import { Link } from 'react-router-dom';
+import Profile from "../../img/Profile.png"
+import { getToken, logout, setToken } from '../services/auth'
+import axios from 'axios'
+import swal from 'sweetalert';
+import Login from './login'
+import NavBarcomponent from './NavBarcomponent'
+//save header
+let header = {
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${getToken()}`
+    }
+}
 
 export default class Home extends Component {
     state = {
@@ -13,46 +28,13 @@ export default class Home extends Component {
         images: []
     }
     render() {
+
         for (let i = 0; i < 15; i++) {
             this.state.images.push(this.state.data[i].img)
         }
-        // console.log(this.state.images.length);
-
-        // const image = this.state.images.map(img => {
-        //     return <Image image={img}></Image>
-        // })
         return (
-
             <div className="App">
-
-                <header>
-                    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                        <Navbar.Brand href="/home">
-                            <img src={J1} style={{ width: 100, marginTop: -7 }} />
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="mr-auto">
-                            </Nav>
-                            <Nav>
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Nav.Link as={Link} to='/register' style={{ color: 'white', 'fontSize': '25px' }}>SignUp</Nav.Link>
-                                <Nav.Link eventKey={2} as={Link} to='/login' style={{ color: 'white', 'fontSize': '25px' }}>Login</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Navbar>
-                    <Row className="justify-content-md-center">
-                    <Navbar expand="lg" bg="light" variant="light">
-                        <Nav>
-                            <Nav.Link as={Link} to='/tours' ><p style={{ color: 'black', 'fontSize': '30px' }}>Tours |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/workShops'><p style={{ color: 'black', 'fontSize': '30px' }}>WorkShops |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/scavengerhunts' ><p style={{ color: 'black', 'fontSize': '30px' }}>Scavenger Hunts |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/sharedexperiences'><p style={{ color: 'black', 'fontSize': '30px' }}>Shared Experiences |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/joincommunity' ><p style={{ color: 'black', 'fontSize': '30px' }}>Join Community </p></Nav.Link>
-                        </Nav>
-                    </Navbar>
-                    </Row>
-                </header>
+             <NavBarcomponent />
                 <body>
 
                     <Jumbotron>
@@ -131,7 +113,7 @@ export default class Home extends Component {
                     </Jumbotron>
                     <h1><center>Most Pouplar Activity</center></h1>
 
-                    <Image image={this.state.images} />
+                    <Imagecomponent image={this.state.images} />
                 </body>
                 <Footer />
             </div>

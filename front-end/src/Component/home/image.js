@@ -4,8 +4,8 @@ import '../../App.css'
 
 
 export default class image extends Component {
+  
     render() {
-        console.log(this.props.image)
         return (
            <Container>
               <Card> 

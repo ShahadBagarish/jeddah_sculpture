@@ -3,16 +3,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import * as Yup from 'yup';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Container } from 'react-bootstrap';
+// import { withRoute } from 
 import axios from 'axios'
 import swal from 'sweetalert';
-import { getToken, setToken, logout } from '../services/auth'
+import { setToken, setIsAuthenticated } from '../services/auth'
+import Home from './Home'
 
-let header = {
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": `Bearer ${getToken()}`
-  }
-}
+
 export default class login extends Component {
   state = {
     data: {},
@@ -20,51 +17,13 @@ export default class login extends Component {
     message: '',
     isAuthenticated: false,
   }
-
-  login(email, password) {
-    console.log(this.state.data.email)
-    console.log(this.state.data.password)
-    axios.post("http://localhost:6200/auth/login",
-      {
-        email: this.state.data.email,
-        password: this.state.data.password
-      })
-      .then((response) => {
-        console.log(response);
-        if (response.data.token) {
-          setToken(response.data.token)
-
-          let data = { ...this.state }
-          data.user = response.data.user
-          data.isAuthenticated = true
-          data.hasError = false
-
-          this.setState(data)
-          swal({
-            title: "Login successfully",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 2500
-          }).then(
-            function () {
-              window.location.href = '/home$auth';
-            })
-          
-        }
-
-      })
-      .catch(err => {
-        console.log(err)
-        let data = { ...this.state }
-        data.hasError = true
-        this.setState(data)
-      });
-  }
+  
   addDataToState(data) {
     this.setState({ data: data, message: "Your successfully login" })
+    this.props.change(this.state.data)
+    this.props.login()
   }
   render() {
-    // const showLogin = (!this.state.isAuthenticated) ? <Login change={this.changeHandler} login={this.loginHandler} /> : null
     return (
       <Container>
         <Formik
@@ -83,7 +42,6 @@ export default class login extends Component {
           onSubmit={fields => {
             console.log(fields)
             this.addDataToState(fields)
-            this.login()
           }}
           render={({ errors, status, touched }) => (
             <Form>
