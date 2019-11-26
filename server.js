@@ -2,14 +2,11 @@
 const express = require('express')
 const PORT = process.env.PORT || 6200
 const server = express()
+const cors = require('cors')
 
 //database connection
 require('./config/mongodb');
 require("dotenv/config");
-
-// EJS
-const ejsLayouts = require("express-ejs-layouts");
-
 
 //Authentication
 const session = require('express-session')
@@ -31,11 +28,9 @@ const adminRoutes = require('./routes/admin')
 
 
 //Middlewares
+server.use(cors())
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
-
-server.set("view engine", "ejs");
-server.use(ejsLayouts);
 
 //create session for passport
 server.set('trust proxy', 1)
