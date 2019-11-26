@@ -3,6 +3,7 @@ import { Navbar, Container, Col, Row } from 'react-bootstrap';
 import vision from "../../img/vision.png"
 import '../../App.css'
 import Home from './Home'
+import Footer from '../home/'
 
 
 export default class Footer extends Component {
