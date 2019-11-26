@@ -8,6 +8,10 @@ AdminBro.registerAdapter(AdminBroMongoose)
 const adminBro = new AdminBro({
   databases: [mongoose],
   rootPath: '/admin',
+  branding:{
+    companyName: "JS",
+    logo:""
+  }
 })
 
 const router = AdminBroExpress.buildRouter(adminBro)
