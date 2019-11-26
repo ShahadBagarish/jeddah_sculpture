@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import * as Yup from 'yup';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Container } from 'react-bootstrap';
+import { withRouter } from "react-router-dom";
 import axios from 'axios'
 import swal from 'sweetalert';
 import { getToken, setToken, logout } from '../services/auth'
@@ -13,7 +14,9 @@ let header = {
     "Authorization": `Bearer ${getToken()}`
   }
 }
-export default class login extends Component {
+ class login extends Component {
+
+
   state = {
     data: {},
     user: "",
@@ -24,6 +27,7 @@ export default class login extends Component {
   login(email, password) {
     console.log(this.state.data.email)
     console.log(this.state.data.password)
+
     axios.post("http://localhost:6200/auth/login",
       {
         email: this.state.data.email,
@@ -33,6 +37,12 @@ export default class login extends Component {
         console.log(response);
         if (response.data.token) {
           setToken(response.data.token)
+
+            if (response.data.user.isAdmin == true) {
+
+               window.location.replace('http://localhost:6200/admin')
+               console.log('Im an admin');
+            }
 
           let data = { ...this.state }
           data.user = response.data.user
@@ -44,12 +54,13 @@ export default class login extends Component {
             title: "Login successfully",
             icon: "success",
             showConfirmButton: false,
-            timer: 2500
+            timer: 25000000
+
           }).then(
             function () {
               window.location.href = '/home$auth';
             })
-          
+
         }
 
       })
@@ -108,7 +119,7 @@ export default class login extends Component {
     )
   }
 }
-
+export default withRouter(login)
 /*
 export default class login extends Component {
 
