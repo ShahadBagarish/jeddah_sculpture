@@ -115,6 +115,8 @@ color: black;
 }
 
 
+
+
 /* Tareq's code for styling the side nav and cards */
 
 .flex-column.theme {
@@ -186,4 +188,25 @@ width: 100px;
 
 
 
+}
+.cards2{
+  margin: 30px ;
+}
+.cardy{
+  weight: 200px;
+  height: 200px;
+}
+
+.imagy{
+  weight: 400px !important;
+  height: 350px;
+}
+
+.righty{
+  /* margin-left: auto; */
+}
+.father{
+  display: flex;
+  justify-content: space-around;
+  
 }
