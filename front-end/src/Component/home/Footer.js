@@ -3,7 +3,7 @@ import { Navbar, Container, Col, Row } from 'react-bootstrap';
 import vision from "../../img/vision.png"
 import '../../App.css'
 import Home from './Home'
-import Footer from '../home/'
+
 
 
 export default class Footer extends Component {
@@ -18,9 +18,9 @@ export default class Footer extends Component {
                                 <div className="aboutUs">
                                     <ul>
                                         <h2>About us</h2>
-                                        <ol> <a>Brif</a> </ol>
-                                        <ol> <a>FAQ</a> </ol>
-                                        <ol> <a>Help</a> </ol>
+                                        <ol> <a>-Brief</a> </ol>
+                                        <ol> <a>-FAQ</a> </ol>
+                                        <ol> <a>-Help</a> </ol>
                                     </ul>
                                 </div>
                             </Col>

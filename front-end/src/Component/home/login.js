@@ -49,7 +49,7 @@ export default class login extends Component {
             function () {
               window.location.href = '/home$auth';
             })
-          
+
         }
 
       })

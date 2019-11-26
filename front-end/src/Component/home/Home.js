@@ -6,16 +6,39 @@ import '../../App.css'
 import data from '../../data'
 import Image from './image'
 import { Link } from 'react-router-dom';
-
+import P1 from '../../img/P1.png'
+import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
+// import { Dropdown } from 'semantic-ui-react'
 export default class Home extends Component {
+
+
+
     state = {
         data: data,
-        images: []
+        images: [],
+        theme: "",
+
+    }
+
+
+
+    onChangeHandler = (e) => {
+        this.setState({
+            [e.target.name]: e.target.eventKey
+        })
+        console.log(this.state);
+
     }
     render() {
         for (let i = 0; i < 15; i++) {
             this.state.images.push(this.state.data[i].img)
         }
+        var numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+        numbers = numbers.map(ele => {
+            return <Dropdown.Item href="#/action-2">{ele}</Dropdown.Item>
+        })
+
+
         // console.log(this.state.images.length);
 
         // const image = this.state.images.map(img => {
@@ -28,7 +51,7 @@ export default class Home extends Component {
                 <header>
                     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                         <Navbar.Brand href="/home">
-                            <img src={J1} style={{ width: 100, marginTop: -7 }} />
+                            <img src={J1} style={{ width: 100, marginTop: -7 }} className="J1" />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
@@ -42,83 +65,62 @@ export default class Home extends Component {
                         </Navbar.Collapse>
                     </Navbar>
                     <Row className="justify-content-md-center">
-                    <Navbar expand="lg" bg="light" variant="light">
-                        <Nav>
-                            <Nav.Link as={Link} to='/tours' ><p style={{ color: 'black', 'fontSize': '30px' }}>Tours |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/workShops'><p style={{ color: 'black', 'fontSize': '30px' }}>WorkShops |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/scavengerhunts' ><p style={{ color: 'black', 'fontSize': '30px' }}>Scavenger Hunts |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/sharedexperiences'><p style={{ color: 'black', 'fontSize': '30px' }}>Shared Experiences |</p></Nav.Link>
-                            <Nav.Link as={Link} to='/joincommunity' ><p style={{ color: 'black', 'fontSize': '30px' }}>Join Community </p></Nav.Link>
-                        </Nav>
-                    </Navbar>
+                        <Navbar expand="lg" bg="light" variant="light">
+                            <Nav>
+                                <Nav.Link as={Link} to='/tours' ><p style={{ color: 'black', 'fontSize': '30px' }}>Tours |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/workShops'><p style={{ color: 'black', 'fontSize': '30px' }}>WorkShops |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/scavengerhunts' ><p style={{ color: 'black', 'fontSize': '30px' }}>Scavenger Hunts |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/sharedexperiences'><p style={{ color: 'black', 'fontSize': '30px' }}>Shared Experiences |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/joincommunity' ><p style={{ color: 'black', 'fontSize': '30px' }}>Join Community </p></Nav.Link>
+                            </Nav>
+                        </Navbar>
                     </Row>
                 </header>
                 <body>
 
-                    <Jumbotron>
+                    <Jumbotron className="P1">
+
+
                         <h1>Welcome to Jeddah Scuplture Hub</h1>
 
-                        <Jumbotron>
-                            <Row className="row1" >
+                        <Jumbotron style={{ backgroundColor: 'black ', height: '10px', marginTop: '40px' }}>
+                            <Row  >
                                 <Col size={4}>
-                                    <ButtonToolbar>
 
-                                        {['Numer of participants'].map(
-                                            variant => (
-                                                <SplitButton style={{ backgroundColor: 'White' }}
-                                                    title={variant}
-                                                    variant={variant.toLowerCase()}
-                                                    id={`dropdown-split-variants-${variant}`}
-                                                    key={variant}
-                                                >
+                                    <select className="browser-default custom-select">
+                                        <option>Number of Participants</option>
+                                        <option value="1"> 1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
 
-                                                    <Dropdown.Divider />
-                                                    <Dropdown.Item eventKey="4"> - 4 +</Dropdown.Item>
-                                                </SplitButton>
-                                            ),
-                                        )}
-                                    </ButtonToolbar>
                                 </Col>
                                 <Col siz={4}>
-                                    <ButtonToolbar>
 
-                                        {['Chhose theme'].map(
-                                            variant => (
-                                                <SplitButton style={{ backgroundColor: 'White' }}
-                                                    title={variant}
-                                                    variant={variant.toLowerCase()}
-                                                    id={`dropdown-split-variants-${variant}`}
-                                                    key={variant}
-                                                >
+                                    <select className="browser-default ">
+                                        <option>Choose a theme</option>
+                                        <option value="1"> Islmaic</option>
+                                        <option value="2"> Geomtric</option>
+                                        <option value="3">Human Form</option>
+                                        <option value="4">Natural</option>
 
-                                                    <Dropdown.Item eventKey="1">Islamic</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2">Geomtric</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" >
-                                                        Human Form
-                                    </Dropdown.Item>
+                                    </select>
 
-                                                    <Dropdown.Item eventKey="4">Natural</Dropdown.Item>
-                                                </SplitButton>
-                                            ),
-                                        )}
-                                    </ButtonToolbar>
                                 </Col>
                                 <Col size={4}>
-                                    <ButtonToolbar >
-                                        {['Select Date'].map(
-                                            variant => (
-                                                <SplitButton style={{ backgroundColor: 'White' }}
-                                                    title={variant}
-                                                    variant={variant.toLowerCase()}
-                                                    id={`dropdown-split-variants-${variant}`}
-                                                    key={variant}
-                                                >
-
-
-                                                </SplitButton>
-                                            ),
-                                        )}
-                                    </ButtonToolbar>
+                                    <Form.Group controlId='DOJ'>
+                                    
+                                        <Form.Control
+                                            type="date"
+                                            name="DOJ"
+                                            required
+                                            placeholder="DOJ" 
+                                        
+                                           />
+                                    </Form.Group>
                                 </Col>
 
                                 <Col size={4}>
