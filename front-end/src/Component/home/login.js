@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import * as Yup from 'yup';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { Container } from 'react-bootstrap';
-import { withRouter } from "react-router-dom";
 import axios from 'axios'
 import swal from 'sweetalert';
 import { getToken, setToken, logout } from '../services/auth'
@@ -14,7 +13,7 @@ let header = {
     "Authorization": `Bearer ${getToken()}`
   }
 }
- class login extends Component {
+ export default class login extends Component {
 
 
   state = {
@@ -54,7 +53,7 @@ let header = {
             title: "Login successfully",
             icon: "success",
             showConfirmButton: false,
-            timer: 25000000
+            timer: 2500
 
           }).then(
             function () {
@@ -119,7 +118,7 @@ let header = {
     )
   }
 }
-export default withRouter(login)
+
 /*
 export default class login extends Component {
 

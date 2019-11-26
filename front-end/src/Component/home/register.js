@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { withRouter } from "react-router-dom";
 import { Container } from 'react-bootstrap';
 import axios from 'axios'
 import swal from 'sweetalert';
 
-export default class register extends Component {
+ class register extends Component {
     state = {
         data: {},
         message: ''
@@ -68,6 +69,7 @@ export default class register extends Component {
                         });
                         this.addDataToState(fields)
                         this.register()
+                        this.props.history.push('/login')
                     }}
                     render={({ errors, status, touched }) => (
                         <Form>
@@ -110,7 +112,10 @@ export default class register extends Component {
                     )}
                 />
                 <h4>  {this.state.message}</h4>
+
             </Container>
         )
     }
 }
+
+export default withRouter(register)
