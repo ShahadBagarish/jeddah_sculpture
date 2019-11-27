@@ -21,6 +21,8 @@ import NavBar from './Component/NavBar';
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
+import Booking from './bookin'
+import ActivityData from './activity'
 
 export default class App extends Component {
   state = {
@@ -83,18 +85,16 @@ export default class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
+            {/* booking tours ---------- */}
+            <Route path='/tours/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
+            <Route path='/scavengerhunts/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
+            <Route path='/workshops/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
             {/*home */}
             <Route path='/register' component={register} />
             <Route path='/login' render={() => <Login login={this.login} change={this.changeHandler} />} />
             <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} logout={this.logout}/>} />
             {/* home nav route ---------- */}
-            <Route path='/tours' component={Activity} />
-            <Route path='/workShops' />
-            <Route path='/scavengerhunts' />
-            <Route path='/sharedexperiences' />
-            <Route path='/joincommunity' />
-            <Route path='/' component={Home} />
-
+            <Route path='/activity' component={Activity} />
             <Route path='/tours' component={Tours} />
             <Route path='/workshops' component={WorkShops} />
             <Route path='/scavengerhunts' component={ScavengerHunts} />

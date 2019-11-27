@@ -23,7 +23,7 @@ export default class Workshopactivity extends Component {
                 <h4 class="card-title"><strong>3 Day Bootcamp on Data Science in Jeddah</strong></h4>
                 <p class="card-text"><strong><em>Build foundational skills in Data Science, Business Analytics, and predictive modeling through the right mix of in-person and online training.</em></strong></p>
                 <p class="card-text"><small class="text-muted">Dec 01</small></p>
-                <Button variant="link" as={Link} to='/tours'>book me now!</Button>
+                <Button variant="link" as={Link} to={`/workshops/booking/${11}`}>book me now!</Button>
 
 
                 {/*button to be added */}
@@ -44,7 +44,7 @@ export default class Workshopactivity extends Component {
                 <h4 class="card-title"><strong>Tea time Elle & Vire Professionnel with chef Ludovic Chesnay</strong></h4>
                 <p class="card-text"><strong><em>A special occasion to discover 6 pastry recipes inspired by the French touch and developped by the chef team of La Maison de la Crème Elle & Vire. Chef Ludovic will share with you his experience and his passion for pastry.</em></strong></p>
                 <p class="card-text"><small class="text-muted">Dec 07</small></p>
-                <Button variant="link" as={Link} to='/scavengerhunt'>book me now!</Button>
+                <Button variant="link" as={Link} to={`/workshops/booking/${11}`}>book me now!</Button>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default class Workshopactivity extends Component {
                 <h4 class="card-title"><strong>PMP® Certification Training in Jeddah</strong></h4>
                 <p class="card-text"><strong><em></em></strong>Get ready for 5 days of fast-paced, hands-on training for the PMP (Project Management Professional) certification in Jeddah. The course is aligned to version 6 of PMI's Project Management Body of Knowledge (PMBoK).</p>
                 <p class="card-text"><small class="text-muted">Dec 20</small></p>
-                <Button variant="link" as={Link} to='/workshops'>book me now!</Button>
+                <Button variant="link" as={Link} to={`/workshops/booking/${11}`}>book me now!</Button>
               </div>
             </div>
           </div>
