@@ -85,6 +85,10 @@ export default class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
+            {/* booking tours ---------- */}
+            <Route path='/tours/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
+            <Route path='/scavengerhunts/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
+            <Route path='/workshops/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
             {/*home */}
             <Route path='/register' component={register} />
             <Route path='/login' render={() => <Login login={this.login} change={this.changeHandler} />} />
@@ -96,8 +100,6 @@ export default class App extends Component {
             <Route path='/scavengerhunts' component={ScavengerHunts} />
             <Route path='/sharedexperiences' />
             <Route path='/joincommunity'/>
-            {/* booking tours ---------- */}
-            <Route path='//tours/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
             <Route path='/' component={Home} />
           </Switch>
         </BrowserRouter>
