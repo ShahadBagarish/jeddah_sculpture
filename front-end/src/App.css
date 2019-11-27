@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(246, 247, 249);
 }
 
 .App-logo {
@@ -40,33 +41,36 @@ color: black;
  
   height: 100%;
   width: 100%;
+ /* margin-bottom: 30%; */
+ background-image: fixed;
+word-wrap: normal;
   
 
 }
 .C2{
  
- height: 120%;
-  width: 150%;
+ height: 160%;
+  width: 110%;
 }
 .C3{
   
-  height: 120%;
+  height: 160%;
   width: 100%;
 }
 .C4{
- 
+ margin-top: 50%;
   height: 120%;
   width: 110%;
 }
 .C5{
- 
-  height: 100%;
+  margin-top: 50%;
+  height: 120%;
   width: 100%;
 }
 .C6{
  
   height: 100%;
-  width: 100%;
+  width: 110%;
 }
 .C7{
   
@@ -75,8 +79,8 @@ color: black;
 }
 .C8{
   
-  height: 50%;
-  width: auto;
+  height: 100%;
+  width: 110%;
 }
 .C9{
    
@@ -105,15 +109,17 @@ color: black;
 }
 .C14{
  
-  height: 100%;
+  height: 112%;
   width: 100%;
 }
 .C15{
  
-  height: 100%;
+  height: 112%;
   width: 100%;
-
 }
+
+
+
 
 /* Tareq's code for styling the side nav and cards */
 
@@ -191,20 +197,41 @@ width: 100px;
   margin: 30px ;
 }
 .cardy{
-  weight: 200px;
+  width: 200px;
   height: 200px;
 }
 
 .imagy{
-  weight: 400px !important;
+  width: 400px !important;
   height: 350px;
 }
 
-.righty{
+/* .righty{
   /* margin-left: auto; */
-}
+/* } */ */
 .father{
   display: flex;
   justify-content: space-around;
   
+}
+
+.J1{
+  height: 120px;
+  width: 150px;
+
+}
+
+.P1{
+  background-image: url('./img/P1.png');
+background-repeat: no-repeat;
+ background-position-y:1px;
+ background-position-x: 50%;
+ background-size: 300% ;
+
+
+}
+
+.Bar{
+  background-color: black;
+
 }

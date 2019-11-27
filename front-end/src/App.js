@@ -16,6 +16,8 @@ import register from './Component/home/register';
 import Login from './Component/home/login';
 import Home from './Component/home/Home';
 import Activity from './Component/book-Activity/Activity'
+import NavBar from './Component/NavBar';
+
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
@@ -77,9 +79,6 @@ export default class App extends Component {
     this.setState(data)
   }
   render() {
-console.log(this.state.datauser);
-
-
     return (
       <div className="App">
         <BrowserRouter>

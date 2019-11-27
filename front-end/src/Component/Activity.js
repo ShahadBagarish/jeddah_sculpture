@@ -121,6 +121,13 @@ export default class Activity extends Component {
 </div>
 </div>
 
+<<<<<<< HEAD
+<div className = "righty">
+        {this.state.data.map(s=>
+  <ActibityCards name = {s.name} description = {s.description} location = {s.location}  img = {s.img} />
+)}
+
+=======
  <div className = "righty">
 
    <h1> 3 Activities Found </h1>
@@ -128,6 +135,7 @@ export default class Activity extends Component {
    <ActivitiesFound />
   
        
+>>>>>>> 75e308a6570ffed36b33d6e107902af02c17d67a
         </div>
 
       </div>

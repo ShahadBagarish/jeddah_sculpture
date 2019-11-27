@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Container, Col, Row } from 'react-bootstrap';
 import vision from "../../img/vision.png"
 import '../../App.css'
+import { FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube } from "react-icons/fa";
+
 
 
 export default class Footer extends Component {
@@ -33,14 +35,20 @@ export default class Footer extends Component {
                                     </ul>
                                 </div>
                             </Col>
+                            <Row>
+                                <Col size={3}>
+                                    <div className="Folow">
+                                        <h2>Follow us </h2>
+                                        <Row>
+                                            <Col >< FaFacebook /></Col>
+                                            <Col><FaTwitterSquare /></Col>
+                                            <Col > <FaInstagram /></Col>
+                                            <Col><FaYoutube /></Col>
+                                        </Row>
 
-                            <Col size={3}>
-                                <div className="Folow">
-                                    <h2>Follow us </h2>
-
-
-                                </div>
-                            </Col>
+                                    </div>
+                                </Col>
+                            </Row>
 
                             <Col size={3}>
 

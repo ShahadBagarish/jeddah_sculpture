@@ -17,7 +17,6 @@ export default class NavBarcomponent extends Component {
 
 
     render() {
-        console.log(localStorage.apiKey);
         return (
             <div>
                 <header>
