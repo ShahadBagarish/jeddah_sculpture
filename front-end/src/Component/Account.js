@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
-export default class WorkShops extends Component {
+
+export default class Account extends Component {
     render() {
         return (
             <div>
-                
+                <NavBar/>
             </div>
         )
     }

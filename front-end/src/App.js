@@ -16,7 +16,10 @@ import register from './Component/home/register';
 import Login from './Component/home/login';
 import Home from './Component/home/Home';
 import Activity from './Component/book-Activity/Activity'
+import NavBar from './Component/NavBar';
 
+import WorkShops from './Component/book-Activity/WorkShops'
+import Tours from './Component/book-Activity/Tours'
 
 
 export default class App extends Component {
@@ -85,6 +88,14 @@ console.log(this.state.datauser);
             <Route path='/sharedexperiences' />
             <Route path='/joincommunity' />
             <Route path='/' component={Home} />
+
+            <Route path='/tours' component={Tours} />
+            <Route path='/workshops' component={WorkShops} />
+            <Route path='/scavengerhunts' component={Activity} />
+            <Route path='/sharedexperiences' />
+            <Route path='/joincommunity'/>
+            <Route path='/' component={home} />
+
           </Switch>
         </BrowserRouter>
       </div>

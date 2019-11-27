@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Navbar, Container, Col, Row } from 'react-bootstrap';
 import vision from "../../img/vision.png"
 import '../../App.css'
-import Home from './Home'
+import { FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube } from "react-icons/fa";
+
 
 
 export default class Footer extends Component {
@@ -17,9 +18,9 @@ export default class Footer extends Component {
                                 <div className="aboutUs">
                                     <ul>
                                         <h2>About us</h2>
-                                        <ol> <a>Brif</a> </ol>
-                                        <ol> <a>FAQ</a> </ol>
-                                        <ol> <a>Help</a> </ol>
+                                        <ol> <a>-Brief</a> </ol>
+                                        <ol> <a>-FAQ</a> </ol>
+                                        <ol> <a>-Help</a> </ol>
                                     </ul>
                                 </div>
                             </Col>
@@ -34,14 +35,20 @@ export default class Footer extends Component {
                                     </ul>
                                 </div>
                             </Col>
+                            <Row>
+                                <Col size={3}>
+                                    <div className="Folow">
+                                        <h2>Follow us </h2>
+                                        <Row>
+                                            <Col >< FaFacebook /></Col>
+                                            <Col><FaTwitterSquare /></Col>
+                                            <Col > <FaInstagram /></Col>
+                                            <Col><FaYoutube /></Col>
+                                        </Row>
 
-                            <Col size={3}>
-                                <div className="Folow">
-                                    <h2>Follow us </h2>
-
-
-                                </div>
-                            </Col>
+                                    </div>
+                                </Col>
+                            </Row>
 
                             <Col size={3}>
 

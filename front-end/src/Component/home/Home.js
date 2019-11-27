@@ -8,6 +8,7 @@ import '../../App.css'
 import data from '../../data'
 import Imagecomponent from '../home/image'
 import { Link } from 'react-router-dom';
+
 import Profile from "../../img/Profile.png"
 import { getToken, logout, setToken } from '../services/auth'
 import axios from 'axios'
@@ -21,102 +22,96 @@ let header = {
         "Authorization": `Bearer ${getToken()}`
     }
 }
+import P1 from '../../img/P1.png'
+import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
+import NavBar from '../NavBar'
+// import { Dropdown } from 'semantic-ui-react'
 
 export default class Home extends Component {
     state = {
         data: data,
-        images: []
+        images: [],
+        theme: this.menu,
     }
+    dropDownmenus = (e => {
+        this.setState({ theme: e.target.value });
+        console.log(this.state.theme);
+    })
+    takeSearchValue = (e => {
+        this.setState({ theme: e.target.value });
+        console.log(this.state.theme);
+    })
     render() {
 
         for (let i = 0; i < 15; i++) {
             this.state.images.push(this.state.data[i].img)
         }
+
         return (
             <div className="App">
              <NavBarcomponent />
+
+        var numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+        numbers = numbers.map(ele => {
+            return <Dropdown.Item href="#/action-2">{ele}</Dropdown.Item>
+        })
+        // console.log(this.state.images.length);
+        // const image = this.state.images.map(img => {
+        //     return <Image image={img}></Image>
+        // })
+        return (
+            <div className="App">
+     
                 <body>
-
-                    <Jumbotron>
+                    <Jumbotron className="P1">
                         <h1>Welcome to Jeddah Scuplture Hub</h1>
-
-                        <Jumbotron>
-                            <Row className="row1" >
+                        <Jumbotron style={{ backgroundColor: 'black ', height: '10px', marginTop: '40px' }}>
+                            <Row  >
                                 <Col size={4}>
-                                    <ButtonToolbar>
-
-                                        {['Numer of participants'].map(
-                                            variant => (
-                                                <SplitButton style={{ backgroundColor: 'White' }}
-                                                    title={variant}
-                                                    variant={variant.toLowerCase()}
-                                                    id={`dropdown-split-variants-${variant}`}
-                                                    key={variant}
-                                                >
-
-                                                    <Dropdown.Divider />
-                                                    <Dropdown.Item eventKey="4"> - 4 +</Dropdown.Item>
-                                                </SplitButton>
-                                            ),
-                                        )}
-                                    </ButtonToolbar>
+                                    <select className="browser-default custom-select"  >
+                                        <option>Number of Participants</option>
+                                        <option value="1"> 1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
                                 </Col>
                                 <Col siz={4}>
-                                    <ButtonToolbar>
-
-                                        {['Chhose theme'].map(
-                                            variant => (
-                                                <SplitButton style={{ backgroundColor: 'White' }}
-                                                    title={variant}
-                                                    variant={variant.toLowerCase()}
-                                                    id={`dropdown-split-variants-${variant}`}
-                                                    key={variant}
-                                                >
-
-                                                    <Dropdown.Item eventKey="1">Islamic</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="2">Geomtric</Dropdown.Item>
-                                                    <Dropdown.Item eventKey="3" >
-                                                        Human Form
-                                    </Dropdown.Item>
-
-                                                    <Dropdown.Item eventKey="4">Natural</Dropdown.Item>
-                                                </SplitButton>
-                                            ),
-                                        )}
-                                    </ButtonToolbar>
+                                    <select className="browser-default custom-select" value={this.state.theme} onChange={this.dropDownmenus}>
+                                        <option>Choose a theme</option>
+                                        <option value="Islmaic"> Islmaic</option>
+                                        <option value="Geomtric"> Geomtric</option>
+                                        <option value="Human Form">Human Form</option>
+                                        <option value="Natural">Natural</option>
+                                    </select>
                                 </Col>
                                 <Col size={4}>
-                                    <ButtonToolbar >
-                                        {['Select Date'].map(
-                                            variant => (
-                                                <SplitButton style={{ backgroundColor: 'White' }}
-                                                    title={variant}
-                                                    variant={variant.toLowerCase()}
-                                                    id={`dropdown-split-variants-${variant}`}
-                                                    key={variant}
-                                                >
-
-
-                                                </SplitButton>
-                                            ),
-                                        )}
-                                    </ButtonToolbar>
+                                    <Form.Group controlId='DOJ'>
+                                        <Form.Control
+                                            type="date"
+                                            name="DOJ"
+                                            required
+                                            placeholder="DOJ"
+                                        />
+                                    </Form.Group>
                                 </Col>
-
                                 <Col size={4}>
-                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }}>Search</Button>
+                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue}    >Search</Button>
                                 </Col>
-
-
                             </Row>
                         </Jumbotron>
                     </Jumbotron>
                     <h1><center>Most Pouplar Activity</center></h1>
 
+
                     <Imagecomponent image={this.state.images} />
+
                 </body>
                 <Footer />
             </div>
         )
     }
 }
+
