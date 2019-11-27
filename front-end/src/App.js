@@ -11,6 +11,8 @@ import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
 
 
+
+
 //component
 import register from './Component/home/register';
 import Login from './Component/home/login';
@@ -20,6 +22,7 @@ import NavBar from './Component/NavBar';
 
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
+import userAccount from './Component/userAccount'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
 import Booking from './bookin'
 import ActivityData from './activity'
@@ -105,7 +108,9 @@ export default class App extends Component {
             <Route path='/scavengerhunts' component={ScavengerHunts} />
             <Route path='/sharedexperiences' />
             <Route path='/joincommunity'/>
-            <Route path='/' component={Home} />
+            <Route path='/Profile' component={userAccount} />
+
+            <Route path='/' component={home} />
           </Switch>
         </BrowserRouter>
       </div>

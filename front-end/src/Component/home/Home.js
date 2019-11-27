@@ -17,13 +17,10 @@ import NavBarcomponent from './NavBarcomponent'
 import P1 from '../../img/P1.png'
 import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
 import NavBar from '../NavBar'
-//save header
-let header = {
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${getToken()}`
-    }
-}
+import userccount from '../userAccount'
+
+
+// import { Dropdown } from 'semantic-ui-react'
 export default class Home extends Component {
     state = {
         data: data,
@@ -50,6 +47,18 @@ export default class Home extends Component {
         return (
             <div className="App">
                 <header>
+                    <NavBar />
+                    <Row className="justify-content-md-center">
+                        <Navbar expand="lg" bg="light" variant="light">
+                            <Nav>
+                                <Nav.Link as={Link} to='/tours' ><p style={{ color: 'black', 'fontSize': '30px' }}>Tours |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/workShops'><p style={{ color: 'black', 'fontSize': '30px' }}>WorkShops |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/scavengerhunts' ><p style={{ color: 'black', 'fontSize': '30px' }}>Scavenger Hunts |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/sharedexperiences'><p style={{ color: 'black', 'fontSize': '30px' }}>Shared Experiences |</p></Nav.Link>
+                                <Nav.Link as={Link} to='/joincommunity' ><p style={{ color: 'black', 'fontSize': '30px' }}>Join Community </p></Nav.Link>
+                            </Nav>
+                        </Navbar>
+                    </Row>
                     <NavBarcomponent logout={this.props.logout} />
                 </header>
                 <body>
