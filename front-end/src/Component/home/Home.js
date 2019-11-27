@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
-import { Button, Navbar, Nav, Form, FormControl, Dropdown, ButtonToolbar, DropdownButton, Jumbotron, SplitButton, Row, Col } from 'react-bootstrap';
-import J1 from "../../img/J1.png"
+import {
+    Button, Navbar, Nav, Form, FormControl, Dropdown, ButtonToolbar,
+    DropdownButton, Jumbotron, SplitButton, Row, Col, Image
+} from 'react-bootstrap';
 import Footer from './Footer'
 import '../../App.css'
 import data from '../../data'
-import Image from './image'
+import Imagecomponent from '../home/image'
 import { Link } from 'react-router-dom';
+import Profile from "../../img/Profile.png"
+import { getToken, logout, setToken } from '../services/auth'
+import axios from 'axios'
+import swal from 'sweetalert';
+import Login from './login'
+import NavBarcomponent from './NavBarcomponent'
 import P1 from '../../img/P1.png'
 import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
 import NavBar from '../NavBar'
@@ -35,10 +43,7 @@ export default class Home extends Component {
         numbers = numbers.map(ele => {
             return <Dropdown.Item href="#/action-2">{ele}</Dropdown.Item>
         })
-        // console.log(this.state.images.length);
-        // const image = this.state.images.map(img => {
-        //     return <Image image={img}></Image>
-        // })
+        console.log(this.state.theme);
         return (
             <div className="App">
                 <header>
@@ -54,6 +59,7 @@ export default class Home extends Component {
                             </Nav>
                         </Navbar>
                     </Row>
+                    <NavBarcomponent logout={this.props.logout} />
                 </header>
                 <body>
                     <Jumbotron className="P1">
@@ -91,17 +97,16 @@ export default class Home extends Component {
                                     </Form.Group>
                                 </Col>
                                 <Col size={4}>
-                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue}    >Search</Button>
+                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue} as={Link} to="/activity" >Search</Button>
                                 </Col>
                             </Row>
                         </Jumbotron>
                     </Jumbotron>
                     <h1><center>Most Pouplar Activity</center></h1>
-                    <Image image={this.state.images} />
+                    <Imagecomponent image={this.state.images} />
                 </body>
                 <Footer />
             </div>
         )
     }
 }
-

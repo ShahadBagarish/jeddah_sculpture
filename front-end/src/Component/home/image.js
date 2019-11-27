@@ -7,8 +7,8 @@ import P5 from '../../img/P5.png'
 
 
 export default class image extends Component {
+  
     render() {
-        console.log(this.props.image)
         return (
             <Container>
            
@@ -17,8 +17,6 @@ export default class image extends Component {
                     <Row>
 
                         <Col>
-                   
-     
                                 <img src={P4} className="C1"  />
                                     
                             
@@ -68,7 +66,7 @@ export default class image extends Component {
                                 <Col>
                                     <img src={this.props.image[7]} className="C8" />
                                 </Col><Col>
-                                    <img src={this.props.image[8]} className="C9" />
+                                    <img src={this.props.image[8]} alt='' className="C9" />
                                 </Col>
                             </Row>
 
@@ -90,12 +88,12 @@ export default class image extends Component {
                                 <Col>
                                     <img src={this.props.image[11]} className="C12" />
                                 </Col><Col>
-                                    <img src={this.props.image[12]} className="C13" />
+                                    <img src={this.props.image[12]} alt='' className="C13" />
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <img src={this.props.image[13]} className="C14" />
+                                    <img src={this.props.image[13]} alt='' className="C14" />
                                 </Col><Col>
                                     <img src={this.props.image[14]} className="C15" />
                                 </Col>

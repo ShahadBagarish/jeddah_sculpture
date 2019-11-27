@@ -19,3 +19,10 @@ export const getToken = () =>{
 export const logout = () => {
  localStorage.removeItem('apiKey')
 }
+
+export const setIsAuthenticated = (value) => {
+    localStorage.setItem('authorized', value)
+} 
+export const getIsAuthenticated = () => {
+    return localStorage.getItem('authorized')
+} 
