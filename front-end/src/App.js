@@ -45,12 +45,12 @@ export default class App extends Component {
         console.log(response);
         if (response.data.token) {
           setToken(response.data.token)
-          // let data = { ...this.state }
-          // data.user = response.data.user
-          // data.isAuthenticated = true
-          // data.hasError = false
-
           this.setState({ isAuthenticated: true })
+        
+          if(response.data.user.isAdmin == true){
+                window.location.href= 'http://localhost:6200/admin'
+              }
+         
           swal({
             title: "Login successfully",
             icon: "success",
@@ -61,10 +61,15 @@ export default class App extends Component {
               window.location.href = '/home';
             })
         }
-
       })
       .catch(err => {
         console.log(err)
+        swal({
+          title: "Email or Password Invalid",
+          icon: "warning",
+          showConfirmButton: false,
+          timer: 2500
+        })
       });
   }
   changeHandler = (data) => {
