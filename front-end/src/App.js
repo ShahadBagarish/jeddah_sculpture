@@ -15,6 +15,8 @@ import Login from './Component/home/login';
 import home from './Component/home/Home';
 import homeAuth from "./Component/home-auth/HomeAuth"
 import Activity from './Component/book-Activity/Activity'
+import NavBar from './Component/NavBar';
+
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
 
