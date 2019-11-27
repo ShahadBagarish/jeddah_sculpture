@@ -21,7 +21,7 @@ import NavBar from './Component/NavBar';
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
-import Booking from './bookin'
+import Booking from './Component/book-Activity/booking'
 import ActivityData from './activity'
 
 export default class App extends Component {
