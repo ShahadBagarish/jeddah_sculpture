@@ -20,7 +20,7 @@ import NavBar from './Component/NavBar';
 
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
-
+import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
 
 export default class App extends Component {
   state = {
@@ -68,11 +68,17 @@ export default class App extends Component {
   changeHandler = (data) => {
     this.setState({ datauser: data })
   }
+  logout = () =>{
+    logout()
+    let data = {...this.state}
+    //reset everything on logout
+    data.isAuthenticated = false
+    data.datauser = ""
+    data.activity = []
 
+    this.setState(data)
+  }
   render() {
-console.log(this.state.datauser);
-
-
     return (
       <div className="App">
         <BrowserRouter>
@@ -80,7 +86,7 @@ console.log(this.state.datauser);
             {/*home */}
             <Route path='/register' component={register} />
             <Route path='/login' render={() => <Login login={this.login} change={this.changeHandler} />} />
-            <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} />} />
+            <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} logout={this.logout}/>} />
             {/* home nav route ---------- */}
             <Route path='/tours' component={Activity} />
             <Route path='/workShops' />
@@ -91,11 +97,10 @@ console.log(this.state.datauser);
 
             <Route path='/tours' component={Tours} />
             <Route path='/workshops' component={WorkShops} />
-            <Route path='/scavengerhunts' component={Activity} />
+            <Route path='/scavengerhunts' component={ScavengerHunts} />
             <Route path='/sharedexperiences' />
             <Route path='/joincommunity'/>
-            <Route path='/' component={home} />
-
+            <Route path='/' component={Home} />
           </Switch>
         </BrowserRouter>
       </div>

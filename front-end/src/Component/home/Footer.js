@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import vision from "../../img/vision.png"
 import '../../App.css'
 import { FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube } from "react-icons/fa";
@@ -18,9 +18,9 @@ export default class Footer extends Component {
                                 <div className="aboutUs">
                                     <ul>
                                         <h2>About us</h2>
-                                        <ol> <a>-Brief</a> </ol>
-                                        <ol> <a>-FAQ</a> </ol>
-                                        <ol> <a>-Help</a> </ol>
+                                        <ol> <a href=''>Brif</a> </ol>
+                                        <ol> <a href=''>FAQ</a> </ol>
+                                        <ol> <a href=''>Help</a> </ol>
                                     </ul>
                                 </div>
                             </Col>
@@ -30,8 +30,8 @@ export default class Footer extends Component {
                                 <div className="Contact">
                                     <ul>
                                         <h2>Contact us</h2>
-                                        <ol><a>  920004315</a></ol>
-                                        <ol><a>info@jsh.sa</a></ol>
+                                        <ol><a href=''>  920004315</a></ol>
+                                        <ol><a href=''>info@jsh.sa</a></ol>
                                     </ul>
                                 </div>
                             </Col>
@@ -52,7 +52,7 @@ export default class Footer extends Component {
 
                             <Col size={3}>
 
-                                <img src={vision} style={{ width: 100 }} />
+                                <img src={vision} alt='' style={{ width: 100 }} />
                                 <h5>All right resived to JSH 2019</h5>
                             </Col>
                         </Row>

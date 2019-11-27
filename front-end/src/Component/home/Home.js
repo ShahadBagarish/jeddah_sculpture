@@ -8,13 +8,15 @@ import '../../App.css'
 import data from '../../data'
 import Imagecomponent from '../home/image'
 import { Link } from 'react-router-dom';
-
 import Profile from "../../img/Profile.png"
 import { getToken, logout, setToken } from '../services/auth'
 import axios from 'axios'
 import swal from 'sweetalert';
 import Login from './login'
 import NavBarcomponent from './NavBarcomponent'
+import P1 from '../../img/P1.png'
+import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
+import NavBar from '../NavBar'
 //save header
 let header = {
     headers: {
@@ -22,11 +24,6 @@ let header = {
         "Authorization": `Bearer ${getToken()}`
     }
 }
-import P1 from '../../img/P1.png'
-import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
-import NavBar from '../NavBar'
-// import { Dropdown } from 'semantic-ui-react'
-
 export default class Home extends Component {
     state = {
         data: data,
@@ -42,26 +39,19 @@ export default class Home extends Component {
         console.log(this.state.theme);
     })
     render() {
-
         for (let i = 0; i < 15; i++) {
             this.state.images.push(this.state.data[i].img)
         }
-
-        return (
-            <div className="App">
-             <NavBarcomponent />
-
         var numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10];
         numbers = numbers.map(ele => {
             return <Dropdown.Item href="#/action-2">{ele}</Dropdown.Item>
         })
-        // console.log(this.state.images.length);
-        // const image = this.state.images.map(img => {
-        //     return <Image image={img}></Image>
-        // })
+        console.log(this.state.theme);
         return (
             <div className="App">
-     
+                <header>
+                    <NavBarcomponent logout={this.props.logout} />
+                </header>
                 <body>
                     <Jumbotron className="P1">
                         <h1>Welcome to Jeddah Scuplture Hub</h1>
@@ -98,20 +88,16 @@ export default class Home extends Component {
                                     </Form.Group>
                                 </Col>
                                 <Col size={4}>
-                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue}    >Search</Button>
+                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue} >Search</Button>
                                 </Col>
                             </Row>
                         </Jumbotron>
                     </Jumbotron>
                     <h1><center>Most Pouplar Activity</center></h1>
-
-
                     <Imagecomponent image={this.state.images} />
-
                 </body>
                 <Footer />
             </div>
         )
     }
 }
-
