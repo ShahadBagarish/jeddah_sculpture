@@ -40,6 +40,9 @@ color: black;
  
   height: 100%;
   width: 100%;
+ /* margin-bottom: 30%; */
+ background-image: fixed;
+word-wrap: normal;
   
 
 }
@@ -219,8 +222,11 @@ width: 100px;
 
 .P1{
   background-image: url('./img/P1.png');
-  background-repeat: no-repeat;
- background-size: 1600px 450px;
+background-repeat: no-repeat;
+ background-position-y:1px;
+ background-position-x: 50%;
+ background-size: 300% ;
+
 
 }
 
@@ -228,4 +234,3 @@ width: 100px;
   background-color: black;
 
 }
-

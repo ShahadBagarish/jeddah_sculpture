@@ -15,6 +15,7 @@ import Login from './Component/home/login';
 import home from './Component/home/Home';
 import homeAuth from "./Component/home-auth/HomeAuth"
 import Activity from './Component/book-Activity/Activity'
+import NavBar from './Component/NavBar';
 
 
 
@@ -46,6 +47,7 @@ export default class App extends Component {
 
     return (
       <div className="App">
+        <NavBar/>
         <BrowserRouter>
           <Switch>
             {/*home */}

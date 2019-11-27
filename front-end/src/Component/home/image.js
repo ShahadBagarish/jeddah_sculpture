@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col, Container, Card, Overlay } from 'react-bootstrap';
 import '../../App.css'
+import P2 from '../../img/P2.png'
+import P4 from '../../img/P4.png'
+import P5 from '../../img/P5.png'
 
 
 export default class image extends Component {
@@ -8,14 +11,20 @@ export default class image extends Component {
         console.log(this.props.image)
         return (
             <Container>
+           
                 <Card>
+            
                     <Row>
 
                         <Col>
+                   
+     
+                                <img src={P4} className="C1"  />
+                                    
+                            
+                                
 
-                            <img src={this.props.image[0]} className="C1" />
-
-
+                     
                         </Col>
 
 
@@ -41,7 +50,9 @@ export default class image extends Component {
                         </Col>
 
                     </Row>
+                    
                 </Card>
+              
                 <Card>
                     <Row>
                         <Col>
@@ -63,14 +74,15 @@ export default class image extends Component {
 
                         </Col>
                         <Col>
-                            <img src={this.props.image[9]} className="C10" />
+                            {/* <img src={this.props.image[18]} className="C10" /> */}
+                            <img src={P2} className="C1"/>
                         </Col>
                     </Row>
                 </Card>
                 <Card>
                     <Row>
                         <Col>
-                            <img src={this.props.image[10]} className="C11" />
+                            <img src={P5} className="C11" />
                         </Col>
                         <Col>
 
