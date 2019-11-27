@@ -29,16 +29,16 @@ export default class Activity extends Component {
             </Navbar.Collapse>
           </Navbar>
           <Row className="justify-content-md-center">
-              <Navbar expand="lg" bg="light" variant="light">
-                <Nav>
-                  <Nav.Link as={Link} to='/tours' ><p style={{ color: 'black', 'fontSize': '30px' }}>Tours |</p></Nav.Link>
-                  <Nav.Link as={Link} to='/workShops'><p style={{ color: 'black', 'fontSize': '30px' }}>WorkShops |</p></Nav.Link>
-                  <Nav.Link as={Link} to='/scavengerhunts' ><p style={{ color: 'black', 'fontSize': '30px' }}>Scavenger Hunts |</p></Nav.Link>
-                  <Nav.Link as={Link} to='/sharedexperiences'><p style={{ color: 'black', 'fontSize': '30px' }}>Shared Experiences |</p></Nav.Link>
-                  <Nav.Link as={Link} to='/joincommunity' ><p style={{ color: 'black', 'fontSize': '30px' }}>Join Community </p></Nav.Link>
-                </Nav>
-              </Navbar>
-            </Row>
+            <Navbar expand="lg" bg="light" variant="light">
+              <Nav>
+                <Nav.Link as={Link} to='/tours' ><p style={{ color: 'black', 'fontSize': '30px' }}>Tours |</p></Nav.Link>
+                <Nav.Link as={Link} to='/workShops'><p style={{ color: 'black', 'fontSize': '30px' }}>WorkShops |</p></Nav.Link>
+                <Nav.Link as={Link} to='/scavengerhunts' ><p style={{ color: 'black', 'fontSize': '30px' }}>Scavenger Hunts |</p></Nav.Link>
+                <Nav.Link as={Link} to='/sharedexperiences'><p style={{ color: 'black', 'fontSize': '30px' }}>Shared Experiences |</p></Nav.Link>
+                <Nav.Link as={Link} to='/joincommunity' ><p style={{ color: 'black', 'fontSize': '30px' }}>Join Community </p></Nav.Link>
+              </Nav>
+            </Navbar>
+          </Row>
         </header>
         <div className="father">
           <div className="lefty">
@@ -123,8 +123,8 @@ export default class Activity extends Component {
 
           <div className="righty">
             <h2><strong>3 Activities Found</strong> </h2>
-      
-                  <ActibityCards /> )}
+
+            <ActibityCards /> )}
           </div>
 
         </div>

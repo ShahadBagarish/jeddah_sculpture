@@ -9,6 +9,8 @@ import axios from 'axios'
 import { element } from 'prop-types';
 
 
+
+
 //component
 import register from './Component/home/register';
 import Login from './Component/home/login';
@@ -19,7 +21,7 @@ import NavBar from './Component/NavBar';
 
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
-
+import userAccount from './Component/userAccount'
 
 export default class App extends Component {
   state = {
@@ -64,6 +66,8 @@ export default class App extends Component {
             <Route path='/scavengerhunts' component={Activity} />
             <Route path='/sharedexperiences' />
             <Route path='/joincommunity'/>
+            <Route path='/Profile' component={userAccount} />
+
             <Route path='/' component={home} />
           </Switch>
         </BrowserRouter>
