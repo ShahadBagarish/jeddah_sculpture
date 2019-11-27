@@ -12,6 +12,9 @@ router.get('/', (req, res) => {
       res.json({msg:"hi", data:data})
     })
 })
+
+
+
 router.put('/changepassowrd/:id', async (req, res) => {
   try {
     let cryptPassword = await bcrypt.hash(req.body.password, 10)

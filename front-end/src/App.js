@@ -21,7 +21,7 @@ import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
 import UserAccount from './Component/userAccount'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
-import Booking from './bookin'
+import Booking from './Component/book-Activity/booking'
 import ActivityData from './activity'
 
 export default class App extends Component {

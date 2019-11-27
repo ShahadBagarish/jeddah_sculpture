@@ -8,6 +8,7 @@ import J1 from "../../img/J1.png"
 import NavBarcomponent from '../home/NavBarcomponent'
 import ActivityData from '../../activity'
 
+
 export default class Activity extends Component {
 
 
@@ -86,7 +87,6 @@ export default class Activity extends Component {
               </div>
               <Col>
               {activity}
-                {/* <ActibityCards />  */}
           </Col>
             </Row>
           </div>
