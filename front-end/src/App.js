@@ -49,11 +49,11 @@ export default class App extends Component {
         if (response.data.token) {
           setToken(response.data.token)
           this.setState({ isAuthenticated: true })
-        
+
           if(response.data.user.isAdmin == true){
                 window.location.href= 'http://localhost:6200/admin'
               }
-         
+
           swal({
             title: "Login successfully",
             icon: "success",
@@ -110,11 +110,10 @@ export default class App extends Component {
             <Route path='/joincommunity'/>
             <Route path='/Profile' component={userAccount} />
 
-            <Route path='/' component={home} />
+            <Route path='/' component={Home} />
           </Switch>
         </BrowserRouter>
       </div>
     );
   }
 }
-
