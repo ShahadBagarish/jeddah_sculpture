@@ -88,6 +88,13 @@ export default class App extends Component {
             <Route path='/login' render={() => <Login login={this.login} change={this.changeHandler} />} />
             <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} logout={this.logout}/>} />
             {/* home nav route ---------- */}
+            <Route path='/tours' component={Activity} />
+            <Route path='/workShops' />
+            <Route path='/scavengerhunts' />
+            <Route path='/sharedexperiences' />
+            <Route path='/joincommunity' />
+            <Route path='/' component={Home} />
+
             <Route path='/tours' component={Tours} />
             <Route path='/workshops' component={WorkShops} />
             <Route path='/scavengerhunts' component={ScavengerHunts} />

@@ -17,7 +17,6 @@ import NavBarcomponent from './NavBarcomponent'
 import P1 from '../../img/P1.png'
 import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
 import NavBar from '../NavBar'
-
 //save header
 let header = {
     headers: {
@@ -25,8 +24,6 @@ let header = {
         "Authorization": `Bearer ${getToken()}`
     }
 }
-
-
 export default class Home extends Component {
     state = {
         data: data,
@@ -42,7 +39,6 @@ export default class Home extends Component {
         console.log(this.state.theme);
     })
     render() {
-
         for (let i = 0; i < 15; i++) {
             this.state.images.push(this.state.data[i].img)
         }
@@ -51,18 +47,15 @@ export default class Home extends Component {
             return <Dropdown.Item href="#/action-2">{ele}</Dropdown.Item>
         })
         console.log(this.state.theme);
-        
         return (
             <div className="App">
                 <header>
                     <NavBarcomponent logout={this.props.logout} />
                 </header>
                 <body>
-                    
                     <Jumbotron className="P1">
                         <h1>Welcome to Jeddah Scuplture Hub</h1>
                         <Jumbotron style={{ backgroundColor: 'black ', height: '10px', marginTop: '40px' }}>
-                            
                             <Row  >
                                 <Col size={4}>
                                     <select className="browser-default custom-select"  >
@@ -101,7 +94,6 @@ export default class Home extends Component {
                         </Jumbotron>
                     </Jumbotron>
                     <h1><center>Most Pouplar Activity</center></h1>
-
                     <Imagecomponent image={this.state.images} />
                 </body>
                 <Footer />
@@ -109,4 +101,3 @@ export default class Home extends Component {
         )
     }
 }
-
