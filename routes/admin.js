@@ -11,6 +11,11 @@ const adminBro = new AdminBro({
   branding:{
     companyName: "JS",
     logo:""
+  },
+  dashboard: {
+
+    handler: async () => {},
+    component: AdminBro.bundle("./DashBoard.jsx")
   }
 })
 

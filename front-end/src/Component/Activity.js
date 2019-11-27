@@ -5,13 +5,6 @@ import axios from 'axios'
 import '../App.css'
 import { ActivitiesFound } from './book-Activity/ActivitiesFound'
 
-
-
-
-
-
-
-
 export default class Activity extends Component {
 
 
@@ -121,6 +114,11 @@ export default class Activity extends Component {
 </div>
 </div>
 
+<div className = "righty">
+        {this.state.data.map(s=>
+  <ActibityCards name = {s.name} description = {s.description} location = {s.location}  img = {s.img} />
+)}
+
  <div className = "righty">
 
    <h1> 3 Activities Found </h1>
@@ -130,6 +128,7 @@ export default class Activity extends Component {
        
         </div>
 
+      </div>
       </div>
     )
   }
