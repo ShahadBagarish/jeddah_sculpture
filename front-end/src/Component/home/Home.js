@@ -88,7 +88,7 @@ export default class Home extends Component {
                                     </Form.Group>
                                 </Col>
                                 <Col size={4}>
-                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue} >Search</Button>
+                                    <Button variant="Search" style={{ backgroundColor: 'Yellow' }} onClick={this.takeSearchValue} as={Link} to="/activity" >Search</Button>
                                 </Col>
                             </Row>
                         </Jumbotron>

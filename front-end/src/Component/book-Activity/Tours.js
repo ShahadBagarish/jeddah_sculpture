@@ -6,6 +6,7 @@ import data from '../../data'
 import { Link } from 'react-router-dom';
 import J1 from "../../img/J1.png"
 import NavBarcomponent from '../home/NavBarcomponent'
+import ActivityData from '../../activity'
 
 export default class Tours extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class Tours extends Component {
             <h2><strong> Tours Found</strong> </h2>
 
             <Touractivity />
+
           </div>
           </Container>
 
