@@ -7,8 +7,8 @@ import P5 from '../../img/P5.png'
 
 
 export default class image extends Component {
+  
     render() {
-        console.log(this.props.image)
         return (
             <Container>
            
