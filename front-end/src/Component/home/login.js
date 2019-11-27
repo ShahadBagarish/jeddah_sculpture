@@ -13,7 +13,9 @@ let header = {
     "Authorization": `Bearer ${getToken()}`
   }
 }
-export default class login extends Component {
+ export default class login extends Component {
+
+
   state = {
     data: {},
     user: "",
@@ -24,6 +26,7 @@ export default class login extends Component {
   login(email, password) {
     console.log(this.state.data.email)
     console.log(this.state.data.password)
+
     axios.post("http://localhost:6200/auth/login",
       {
         email: this.state.data.email,
@@ -33,6 +36,12 @@ export default class login extends Component {
         console.log(response);
         if (response.data.token) {
           setToken(response.data.token)
+
+            if (response.data.user.isAdmin == true) {
+
+               window.location.replace('http://localhost:6200/admin')
+               console.log('Im an admin');
+            }
 
           let data = { ...this.state }
           data.user = response.data.user
@@ -45,6 +54,7 @@ export default class login extends Component {
             icon: "success",
             showConfirmButton: false,
             timer: 2500
+
           }).then(
             function () {
               window.location.href = '/home$auth';
