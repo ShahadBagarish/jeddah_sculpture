@@ -5,10 +5,11 @@ const router = express.Router()
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const bcrypt = require('bcrypt')
+
 router.get('/', (req, res) => {
   User.find()
     .then(data => {
-      res.json(data)
+      res.json({msg:"hi", data:data})
     })
 })
 router.put('/changepassowrd/:id', async (req, res) => {

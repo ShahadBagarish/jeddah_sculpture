@@ -9,20 +9,25 @@ import {
 import { Link } from 'react-router-dom';
 import Profile from "../../img/Profile.png"
 import { getToken, setToken, logout } from '../services/auth'
+import axios from 'axios'
 
 export default class NavBarcomponent extends Component {
     state = {
         activeItem: 'home'
     }
 
-
+    
     render() {
+        console.log((localStorage.apiKey));
+
+        console.log((!localStorage.apiKey));
+        
         return (
             <div>
                 <header>
                     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                         <Navbar.Brand href="/home">
-                            <img src={J1} style={{ width: 100, marginTop: -7 }} />
+                            <img src={J1} style={{ width: 180, height: 130, marginTop: -7 }} />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
@@ -45,8 +50,7 @@ export default class NavBarcomponent extends Component {
                                                         title={variant}
                                                         key={variant}>
                                                         <Dropdown.Item as={Link} to='/home' eventKey="1">Home</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="2">Acount</Dropdown.Item>
-                                                        <Dropdown.Item eventKey="3" > Booked activity  </Dropdown.Item>
+                                                        <Dropdown.Item eventKey="2" href='/profile' >Acount</Dropdown.Item>
                                                         <Dropdown.Item eventKey="5">Joined Communities</Dropdown.Item>
                                                         <Dropdown.Item eventKey="6">Shared Experiences </Dropdown.Item>
                                                         <Dropdown.Divider />

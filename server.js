@@ -24,6 +24,7 @@ const adminRoutes = require('./routes/admin')
 server.use(cors())
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
+
 //create session for passport
 server.set('trust proxy', 1)
 server.use(session({
@@ -33,6 +34,7 @@ server.use(session({
 }))
 server.use(passport.initialize())
 server.use(passport.session())
+
 //routes
 server.use('/auth', require('./routes/auth.routes'))
 //user routes

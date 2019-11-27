@@ -20,13 +20,14 @@ import NavBar from '../NavBar'
 import userccount from '../userAccount'
 
 
-// import { Dropdown } from 'semantic-ui-react'
 export default class Home extends Component {
     state = {
         data: data,
         images: [],
         theme: this.menu,
     }
+
+
     dropDownmenus = (e => {
         this.setState({ theme: e.target.value });
         console.log(this.state.theme);

@@ -47,7 +47,7 @@ export default class login extends Component {
               .email('Email is invalid')
               .required('Email is required'),
             password: Yup.string()
-              .min(2, 'Password must be at least 6 characters')
+              .min(6, 'Password must be at least 6 numbers')
               .required('Password is required')
           })}
           onSubmit={fields => {
