@@ -8,7 +8,6 @@ import { Row, Container, Col, Nav, Dropdown, Button, Form, CardGroup, Card } fro
 export default class ActibityCards extends Component {
 
   render() {
-    console.log(this.props.data);
     
     return (
 
@@ -24,11 +23,11 @@ export default class ActibityCards extends Component {
                 <h4 class="card-title"><strong>{this.props.data.title}</strong></h4>
                 <p class="card-text"><strong><em>{this.props.data.text}</em></strong></p>
                 <p class="card-text"><small class="text-muted"><span class="fa fa-star checked" style={{ "color": "orange;" }}>4.5 {"\u2B50"}</span></small></p>
-                 <Button variant="link" as={Link} to={`/${this.props.data.route}`}> book me now!</Button>
+                 <Button variant="link" as={Link} to={`/${this.props.data.id}`}>Click here for more details!</Button>
 
 
 
-                {/*button to be added */}
+              
               </div>
             </div>
           </div>
