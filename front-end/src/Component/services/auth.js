@@ -16,9 +16,9 @@ export const getToken = () =>{
 
 //destory token
 // in the key called apiKey
-// export const logout = () => {
-//  localStorage.removeItem('apiKey')
-// }
+export const logout = () => {
+ localStorage.removeItem('apiKey')
+}
 
 export const setIsAuthenticated = (value) => {
     localStorage.setItem('authorized', value)
