@@ -19,11 +19,9 @@ componentDidMount(){
   axios.get(`http://localhost:6200/sculpture/find/${this.props.match.params.id}`)
     .then(res => {
 
-          this,setState({
-            
+          // this,setState({
 
-
-          })
+          // })
 
     }).catch(err => {console.log(err);})
 

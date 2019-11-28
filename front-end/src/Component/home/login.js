@@ -73,7 +73,7 @@ export default class login extends Component {
             </Form>
           )}
         />
-        <Link to='/forgetpassword'>Forget your password ?</Link>
+        <Link to='/password'>Forget your password ?</Link>
       </Container>
       </div>
     )
