@@ -7,15 +7,52 @@ import { Link } from 'react-router-dom';
 import J1 from "../../img/J1.png"
 import NavBarcomponent from '../home/NavBarcomponent'
 import ActivityData from '../../activity'
+import axios from 'axios'
+
 
 
 export default class Activity extends Component {
 
 
-  render() {
-    var activity = ActivityData.map( data => {
-      return <ActibityCards data={data}/>
+
+
+state={
+  data:[]
+}
+
+
+componentDidMount(){
+
+  axios.get('http://localhost:6200/show/scrupture')
+  .then(res => {
+    console.log(res);
+    this.setState({
+
+      data:res.data
+
+
     })
+  }).catch(err => {console.log(err)})
+
+
+
+}
+
+
+
+  render() {
+
+
+
+    let activitycards = this.state.data.map(e => {
+        console.log(e);
+
+       return <ActibityCards name={e.name} dis={e.description} img={e.img} id={e._id} />
+
+     })
+
+
+
     return (
       <div>
         <NavBarcomponent />
@@ -86,7 +123,14 @@ export default class Activity extends Component {
                 </Col>
               </div>
               <Col>
-              {activity}
+
+              {/* {activity} */}
+
+
+                        {activitycards}
+
+
+
           </Col>
             </Row>
           </div>
@@ -96,4 +140,3 @@ export default class Activity extends Component {
     )
   }
 }
-

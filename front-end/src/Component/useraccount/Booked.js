@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
-
-export default class Account extends Component {
+import userAccount from '../userAccount'
+import NavBar from '../NavBar'
+export default class Booked extends Component {
     render() {
         return (
             <div>

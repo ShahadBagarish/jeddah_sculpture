@@ -10,7 +10,6 @@ import { element } from 'prop-types';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
 
-
 //component
 import register from './Component/home/register';
 import Login from './Component/home/login';
@@ -20,6 +19,7 @@ import NavBar from './Component/NavBar';
 
 import WorkShops from './Component/book-Activity/WorkShops'
 import Tours from './Component/book-Activity/Tours'
+import UserAccount from './Component/userAccount'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
 import Booking from './Component/book-Activity/booking'
 import ActivityData from './activity'
@@ -28,7 +28,7 @@ export default class App extends Component {
   state = {
     datauser: {},
     activity: [],
-    user: "",
+    userid: "",
     errorMsg: '',
     isAuthenticated: false,
     hasError: false
@@ -45,12 +45,18 @@ export default class App extends Component {
         console.log(response);
         if (response.data.token) {
           setToken(response.data.token)
-          // let data = { ...this.state }
-          // data.user = response.data.user
-          // data.isAuthenticated = true
-          // data.hasError = false
+          let data = { ...this.state }
+          data.userid = response.data.user.id
+          data.isAuthenticated = true
+          data.hasError = false
+    let storagedUser = localStorage.setItem("userid", data.userid);
 
-          this.setState({ isAuthenticated: true })
+          this.setState({data})
+
+          if (response.data.user.isAdmin == true) {
+            window.location.href = 'http://localhost:6200/admin'
+          }
+
           swal({
             title: "Login successfully",
             icon: "success",
@@ -58,21 +64,26 @@ export default class App extends Component {
             timer: 2500
           }).then(
             function () {
-              window.location.href = '/home';
+              window.location.href = '/profile';
             })
         }
-
       })
       .catch(err => {
         console.log(err)
+        swal({
+          title: "Email or Password Invalid",
+          icon: "warning",
+          showConfirmButton: false,
+          timer: 2500
+        })
       });
   }
   changeHandler = (data) => {
     this.setState({ datauser: data })
   }
-  logout = () =>{
+  logout = () => {
     logout()
-    let data = {...this.state}
+    let data = { ...this.state }
     //reset everything on logout
     data.isAuthenticated = false
     data.datauser = ""
@@ -81,25 +92,29 @@ export default class App extends Component {
     this.setState(data)
   }
   render() {
+    console.log(this.state.user);
+
     return (
       <div className="App">
         <BrowserRouter>
           <Switch>
             {/* booking tours ---------- */}
-            <Route path='/tours/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
-            <Route path='/scavengerhunts/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
-            <Route path='/workshops/booking/:id' render={(props)=> <Booking {...props} data={ActivityData}/>} />
+            <Route path='/activity/tours/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
+            <Route path='/scavengerhunts/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
+            <Route path='/workshops/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
             {/*home */}
             <Route path='/register' component={register} />
             <Route path='/login' render={() => <Login login={this.login} change={this.changeHandler} />} />
-            <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} logout={this.logout}/>} />
+            <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} logout={this.logout} />} />
             {/* home nav route ---------- */}
             <Route path='/activity' component={Activity} />
             <Route path='/tours' component={Tours} />
             <Route path='/workshops' component={WorkShops} />
             <Route path='/scavengerhunts' component={ScavengerHunts} />
             <Route path='/sharedexperiences' />
-            <Route path='/joincommunity'/>
+            <Route path='/joincommunity' />
+            <Route path='/profile' render={() => <UserAccount user={this.state.userid} />} />
+
             <Route path='/' component={Home} />
           </Switch>
         </BrowserRouter>
@@ -107,4 +122,3 @@ export default class App extends Component {
     );
   }
 }
-

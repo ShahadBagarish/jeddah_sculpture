@@ -17,19 +17,17 @@ import NavBarcomponent from './NavBarcomponent'
 import P1 from '../../img/P1.png'
 import { DatePicker, startDate, setStartDate, useState } from 'react-date-picker';
 import NavBar from '../NavBar'
-//save header
-let header = {
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${getToken()}`
-    }
-}
+import userccount from '../userAccount'
+
+
 export default class Home extends Component {
     state = {
         data: data,
         images: [],
         theme: this.menu,
     }
+
+
     dropDownmenus = (e => {
         this.setState({ theme: e.target.value });
         console.log(this.state.theme);
@@ -50,6 +48,7 @@ export default class Home extends Component {
         return (
             <div className="App">
                 <header>
+
                     <NavBarcomponent logout={this.props.logout} />
                 </header>
                 <body>
