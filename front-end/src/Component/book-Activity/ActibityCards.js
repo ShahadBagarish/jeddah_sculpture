@@ -8,7 +8,6 @@ import { Row, Container, Col, Nav, Dropdown, Button, Form, CardGroup, Card } fro
 export default class ActibityCards extends Component {
 
   render() {
-
     return (
 
       <div>
