@@ -49,6 +49,7 @@ export default class App extends Component {
           data.userid = response.data.user.id
           data.isAuthenticated = true
           data.hasError = false
+    let storagedUser = localStorage.setItem("userid", data.userid);
 
           this.setState({data})
 
@@ -98,7 +99,7 @@ export default class App extends Component {
         <BrowserRouter>
           <Switch>
             {/* booking tours ---------- */}
-            <Route path='/tours/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
+            <Route path='/activity/tours/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
             <Route path='/scavengerhunts/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
             <Route path='/workshops/booking/:id' render={(props) => <Booking {...props} data={ActivityData} />} />
             {/*home */}
