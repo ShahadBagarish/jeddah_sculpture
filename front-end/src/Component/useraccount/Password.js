@@ -28,7 +28,7 @@ export default class Password extends Component {
             .then(function (response) {
                 console.log(response);
                 swal({
-                    title: "Login successfully",
+                    title: "Updated successfully",
                     icon: "success",
                     showConfirmButton: false,
                     timer: 2500

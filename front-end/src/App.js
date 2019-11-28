@@ -50,10 +50,8 @@ export default class App extends Component {
           data.userid = response.data.user.id
           data.isAuthenticated = true
           data.hasError = false
-    let storagedUser = localStorage.setItem("userid", data.userid);
-
           this.setState({data})
-
+          
           if (response.data.user.isAdmin == true) {
             window.location.href = 'http://localhost:6200/admin'
           }
@@ -91,6 +89,7 @@ export default class App extends Component {
     data.activity = []
 
     this.setState(data)
+    window.location.href = '/';
   }
   render() {
     console.log(this.state.user);
