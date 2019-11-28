@@ -10,6 +10,7 @@ import ActivityData from '../../activity'
 import axios from 'axios'
 
 
+
 export default class Activity extends Component {
 
 
@@ -122,6 +123,9 @@ componentDidMount(){
                 </Col>
               </div>
               <Col>
+
+              {/* {activity} */}
+
 
                         {activitycards}
 
