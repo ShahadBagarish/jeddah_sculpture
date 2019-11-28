@@ -10,7 +10,7 @@ export default class Password extends Component {
         email: '',
         password: ''
     }
-    
+
     handleSubmit = (event) =>{
         event.preventDefault();
         console.log(this.state.email);
@@ -28,7 +28,7 @@ export default class Password extends Component {
             .then(function (response) {
                 console.log(response);
                 swal({
-                    title: "Login successfully",
+                    title: "Updated successfully",
                     icon: "success",
                     showConfirmButton: false,
                     timer: 2500
@@ -60,7 +60,7 @@ export default class Password extends Component {
         this.setState({ password: event.target.value })
     }
     render() {
-        
+
 
         return (
             <div>

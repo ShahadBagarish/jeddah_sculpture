@@ -16,12 +16,12 @@ export default class NavBarcomponent extends Component {
         activeItem: 'home'
     }
 
-    
+
     render() {
         console.log((localStorage.apiKey));
 
         console.log((!localStorage.apiKey));
-        
+
         return (
             <div>
                 <header>
