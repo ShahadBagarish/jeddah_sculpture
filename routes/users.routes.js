@@ -25,6 +25,16 @@ router.put('/changepassowrd/:id', async (req, res) => {
   }
 })
 
+router.put('/changepassowrd', async (req, res) => {
+  try {
+    let cryptPassword = await bcrypt.hash(req.body.password, 10)
+    const updatepost = await User.findOneAndUpdate({"email": req.body.email}, { "password": cryptPassword })
+
+    res.json({ msg: "updated", updatepost })
+  } catch (err) {
+    res.json({ message: err })
+  }
+})
 router.put('/changeusername/:id', async (req, res) => {
   try {
     const updatepost = await User.findOneAndUpdate({ "_id": req.params.id }, { "username": req.body.username })

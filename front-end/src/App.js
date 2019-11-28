@@ -23,6 +23,7 @@ import UserAccount from './Component/userAccount'
 import ScavengerHunts from './Component/book-Activity/ScavengerHunts'
 import Booking from './Component/book-Activity/booking'
 import ActivityData from './activity'
+import Password from './Component/useraccount/Password'
 
 export default class App extends Component {
   state = {
@@ -64,7 +65,7 @@ export default class App extends Component {
             timer: 2500
           }).then(
             function () {
-              window.location.href = '/profile';
+              window.location.href = '/';
             })
         }
       })
@@ -107,6 +108,7 @@ export default class App extends Component {
             <Route path='/login' render={() => <Login login={this.login} change={this.changeHandler} />} />
             <Route path='/home' render={() => <Home isAuthenticated={this.state.isAuthenticated} logout={this.logout} />} />
             {/* home nav route ---------- */}
+            <Route path='/password' component={Password} />
             <Route path='/activity' component={Activity} />
             <Route path='/tours' component={Tours} />
             <Route path='/workshops' component={WorkShops} />
