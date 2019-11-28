@@ -40,7 +40,7 @@ server.use('/auth', require('./routes/auth.routes'))
 //user routes
 server.use('/users', passport.authenticate('jwt', { session: false }),  usersroutes)
 //Sculpture routes
-server.use('/sculpture', passport.authenticate('jwt', { session: false }), sculptureroutes)
+server.use('/sculpture', sculptureroutes)
 //activity routes
 server.use('/activity', passport.authenticate('jwt', { session: false }), activityRoute)
 //show routes

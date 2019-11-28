@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 require("dotenv/config");
 
-mongoose.connect('mongodb://localhost/Jeddah-Sculpture',{ useNewUrlParser : true})
+mongoose.connect(process.env.DEV_DB,{ useNewUrlParser : true})
 .then((   ) => console.log('connected MongDB'),
       (err) => console.log(err))
 
