@@ -19,9 +19,9 @@ componentDidMount(){
   axios.get(`http://localhost:6200/sculpture/find/${this.props.match.params.id}`)
     .then(res => {
 
-          this,setState({
-            
+          this.setState({
 
+              data:res.data
 
           })
 
@@ -32,22 +32,21 @@ componentDidMount(){
 
 
     render() {
-        var bookingInfo = BookingData.map( data => {
-            return <BookingCard data={data}/>
-          })
 
+console.log(this.state.data);
         return (
 
      <div>
-    <NavBarcomponent />
-    <Container >
-            <div className="righty">
-             <h2><strong> WAITING FOR DATA TO BE FETCHED</strong> </h2>
-{/*
-                {bookingInfo}        */}
-                </div>
+  <NavBarcomponent />
 
-                 </Container>
+
+
+
+            <img src={this.state.data.img} />
+            <h1> {this.state.data.name} </h1>
+            <h1> {this.state.data.description} </h1>
+
+
 
                 </div>
         )

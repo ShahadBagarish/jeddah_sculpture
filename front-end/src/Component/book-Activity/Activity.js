@@ -44,9 +44,9 @@ componentDidMount(){
 
 
     let activitycards = this.state.data.map(e => {
-        console.log(e._id);
+        console.log(e);
 
-       return <ActibityCards name={e.name} dis={e.discription} img={e.img} id={e._id} />
+       return <ActibityCards name={e.name} dis={e.description} img={e.img} id={e._id} />
 
      })
 
