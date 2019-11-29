@@ -14,7 +14,7 @@ export default class login extends Component {
     message: '',
     isAuthenticated: false,
   }
-  
+
   addDataToState(data) {
     this.setState({ data: data, message: "Your successfully login" })
     console.log(this.state.message);
@@ -26,8 +26,8 @@ export default class login extends Component {
     return (
      <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="/">
-                        <img src={J1} alt='' style={{ width: 180, height: 130, marginTop: -7 }} />
+                    <Navbar.Brand href="/home">
+                        <img src={J1} alt='' style={{ width: 180, height: 130, marginTop: -7 }}/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

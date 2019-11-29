@@ -116,7 +116,7 @@ export default class App extends Component {
             <Route path='/joincommunity' />
             <Route path='/profile' render={() => <UserAccount user={this.state.userid} />} />
 
-            <Route path='/' component={Home} />
+            <Route exact path='/' component={Home} />
           </Switch>
         </BrowserRouter>
       </div>

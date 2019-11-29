@@ -10,7 +10,7 @@ export default class Password extends Component {
         email: '',
         password: ''
     }
-    
+
     handleSubmit = (event) =>{
         event.preventDefault();
         console.log(this.state.email);
@@ -60,7 +60,7 @@ export default class Password extends Component {
         this.setState({ password: event.target.value })
     }
     render() {
-        
+
 
         return (
             <div>
