@@ -26,7 +26,7 @@ export default class NavBarcomponent extends Component {
             <div>
                 <header>
                     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                        <Navbar.Brand href="/">
+                        <Navbar.Brand href="/home">
                             <img src={J1} style={{ width: 180, height: 130, marginTop: -7 }} />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

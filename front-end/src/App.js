@@ -63,7 +63,7 @@ export default class App extends Component {
             timer: 2500
           }).then(
             function () {
-              window.location.href = '/';
+              window.location.href = '/home';
             })
         }
       })
@@ -89,7 +89,7 @@ export default class App extends Component {
     data.activity = []
 
     this.setState(data)
-    window.location.href = '/';
+    window.location.href = '/home';
   }
   render() {
     console.log(this.state.user);
