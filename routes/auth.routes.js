@@ -70,12 +70,13 @@ router.post('/login', (request, response) => {
           }
           user.password = '' //remove password
           console.log(user)
-          const token = jwt.sign(user.toJSON(), process.env.JWTSecret, { expiresIn: 60 * 60 });
+          const token = jwt.sign(user.toJSON(), process.env.JWTSecret, { expiresIn: "30m" });
           return response.status(200).json({user, token});
         });
     })(request, response);
    
 })
 
+ 
 
 module.exports = router

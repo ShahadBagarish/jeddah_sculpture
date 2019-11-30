@@ -4,14 +4,12 @@ const passportJWT = require('passport-jwt');
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
-
 const User = require('../models/User')
 
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
-    session: false,
-    // passReqToCallback: true
+    session: false
   },
   (email, password, done) => {
     User.findOne({
@@ -54,7 +52,6 @@ function (jwtPayload, done) {
     });
 }
 ));
-
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);

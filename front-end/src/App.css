@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(246, 247, 249);
 }
 
 .App-logo {
@@ -20,3 +21,229 @@
 .App-link {
   color: #09d3ac;
 }
+
+.footer1{
+  background-color: rgb(250, 240, 227);
+}
+
+
+.row1{
+  background-color: black;
+  background-size: 40px;
+
+}
+
+.nav1{
+color: black;
+}
+
+.C1{
+ 
+  height: 100%;
+  width: 100%;
+ /* margin-bottom: 30%; */
+ background-image: fixed;
+word-wrap: normal;
+  
+
+}
+.C2{
+ 
+ height: 160%;
+  width: 110%;
+}
+.C3{
+  
+  height: 160%;
+  width: 100%;
+}
+.C4{
+ margin-top: 50%;
+  height: 120%;
+  width: 110%;
+}
+.C5{
+  margin-top: 50%;
+  height: 120%;
+  width: 100%;
+}
+.C6{
+ 
+  height: 100%;
+  width: 110%;
+}
+.C7{
+  
+  height: 100%;
+  width: 100%;
+}
+.C8{
+  
+  height: 100%;
+  width: 110%;
+}
+.C9{
+   
+  height: 100%;
+  width: 100%;
+}
+.C10{
+  
+  height: 100%;
+  width: 100%;
+}
+.C11{
+  
+  height: 100%;
+  width: 100%;
+}
+.C12{
+ 
+  height: 100%;
+  width: 100%;
+}
+.C13{
+ 
+  height: 100%;
+  width: 100%;
+}
+.C14{
+ 
+  height: 112%;
+  width: 100%;
+}
+.C15{
+ 
+  height: 112%;
+  width: 100%;
+}
+
+
+
+
+/* Tareq's code for styling the side nav and cards */
+
+.flex-column.theme {
+  flex-direction: column!important;
+  background-color: #14100D;
+  border-radius:20px;
+  width: 250px;
+  height:300px;
+}
+
+.Dropmenue {
+  margin-left:30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+
+.btn-primary.themebtn, .btn-primary.themebtn:hover, .btn-primary.themebtn:active, .btn-primary.themebtn:visited {
+  
+  width: 150px;
+  background-color: white!important;
+  color:black !important;
+  border-color: white !important;
+}
+
+.Dropdownpos{
+  margin:20px;
+}
+
+.optionbuttonpos{
+  margin: 20px;
+}
+
+
+.btn-primary.Searchthemebtn, .btn-primary.Searchthemebtn:hover, .btn-primary.Searchthemebtn:active, .btn-primary.Searchthemebtn:visited{
+color: black !important;
+background-color: #ffbb33 !important;
+border-color: #ffbb33 !important;
+margin-left:53px!important;
+border-radius:20px;
+width: 100px;
+
+
+
+
+}
+
+
+.flex-column.filter {
+  flex-direction: column!important;
+  background-color: rgba(69, 28, 14, 0.922);
+  margin-top: 20px;
+  border-radius:20px;
+  width: 250px;
+  height:300px;
+}
+
+.filtertext{
+  color: white;
+  margin: auto;
+}
+
+
+.filterItem{
+
+  color: white;
+  margin-left: 30px;
+
+
+
+}
+.cards2{
+  margin: 30px ;
+}
+.cardy{
+  width: 200px;
+  height: 200px;
+}
+
+.imagy{
+  width: 400px !important;
+  height: 350px;
+}
+
+/* .righty{
+  /* margin-left: auto; */
+/* } */ */
+.father{
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.J1{
+  height: 120px;
+  width: 150px;
+
+}
+
+.P1{
+  background-image: url('./img/P1.png');
+background-repeat: no-repeat;
+ background-position-y:1px;
+ background-position-x: 50%;
+ background-size: 300% ;
+
+
+}
+
+.Bar{
+  background-color: black;
+
+}
+
+.container1{
+  font-size: 150%;
+
+
+
+ 
+}
+.P7{
+  height: 250px;
+  width:250px;
+margin-left: 220%;}
